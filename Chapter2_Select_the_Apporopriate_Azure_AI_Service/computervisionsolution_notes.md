@@ -1,0 +1,89 @@
+file:///C:/Users/gdevid/OneDrive%20-%20athenahealth/Backup/Devid/Training/MicrosoftAzureAI102/Microsoft_Azure_AI_102_Syllabus.pdf
+https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/images/vision-studio-ocr-demo.png
+https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/concept-describing-images
+
+Computer Vision Solution:
+    - Analyses images using advanced algorithms to get the information based on the visual features
+
+Features:
+    - Color
+    - Texture
+    - Shape
+    - Spatial features
+    - Keypoints - Description
+    - ROI (regions of Interest)
+    - Geometric transformation
+        - Translations
+        - Rotations
+    - Object detection
+    - Facial features
+    - Scene understanding
+    - Actions/Motions
+
+Applications:
+    - CCTV
+    - Biometric using facial detection
+    - Image generation - DallE/ Canva
+    - Face detection (Interviews / Camera)
+
+Azures AI Services:
+    - OCR (Optical Character recognition)
+        - Normal text images
+        - Handwritten images
+    - Image Analysis
+    - Facial recognition
+    - Video analysis
+
+Minimum requirement of inputs:
+    - Images:
+        - JPG, PNG, GIF, BMP
+        - < 4 MB
+        - > 50x50 pixels (Normal Images)
+        - < 10000 x 10000 pixels (OCR images)
+    - Vidoes
+        - RTSP (real time streaming protocol), raw video, mp4, plv, mkv, H.264, H.265, MPEG-4
+
+OCR:
+    - Languages - English, Spanish, Russian, Chinesh (Traditional / Simple), Duth, Greek, Arabic
+    - Supports 150+ languages
+
+Image analysis:
+    - Genrate ALT text/captions for images
+    - Adult content
+    - Face - verifies the user (Biometric)
+
+---
+
+https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/overview
+
+Environment Variables:
+    - VISION_KEY
+    - VISION_ENDPOINT
+
+Sample Input:
+https://raw.githubusercontent.com/Azure-Samples/cognitive-services-sample-data-files/master/ComputerVision/Images/printed_text.jpg
+
+Sample Output:
+Azure Cognitive Services Computer Vision
+
+----------------------------------------------------------
+READ FILE FROM URL
+
+Extracting text from URL file printed_text.jpg...
+
+Nutrition Facts Amount Per Serving
+Serving size: 1 bar (40g)
+Serving Per Package: 4
+Total Fat 13g
+Saturated Fat 1.5g
+Amount Per Serving
+Trans Fat 0g
+Calories 190
+Cholesterol 0mg
+ories from Fat 110
+Sodium 20mg
+nt Daily Values are based on Vitamin A 50%
+calorie diet.
+
+---
+
