@@ -6,10 +6,10 @@ from azure.core.credentials import AzureKeyCredential
 # Set the values of your computer vision endpoint and computer vision key
 # as environment variables:
 try:
-    endpoint = os.environ["VISION_ENDPOINT"]
-    key = os.environ["VISION_KEY"]
+    endpoint = os.environ["VISION_ENDPOINT_IMAGE_ANALYSIS"]
+    key = os.environ["VISION_KEY_IMAGE_ANALYSIS"]
 except KeyError:
-    print("Missing environment variable 'VISION_ENDPOINT' or 'VISION_KEY'")
+    print("Missing environment variable 'VISION_ENDPOINT_IMAGE_ANALYSIS' or 'VISION_KEY_IMAGE_ANALYSIS'")
     print("Set them before running this sample.")
     exit()
 
