@@ -2,8 +2,8 @@ from azure.ai.textanalytics import TextAnalyticsClient
 from azure.core.credentials import AzureKeyCredential
 
 # Replace with your Azure resource credentials
-endpoint = "https://languageservicetestbydevid.cognitiveservices.azure.com/"
-api_key = "2eVBJTtGnVy95D0IYsC5dO4DRhZhBkM4TK3HNYtzggCSQdof2hj3JQQJ99BAACYeBjFXJ3w3AAAaACOGNQ4T"
+endpoint = "https://<your-resource-name>.cognitiveservices.azure.com/"
+api_key = "<your-api-key>"
 
 # Initialize the client
 credential = AzureKeyCredential(api_key)
