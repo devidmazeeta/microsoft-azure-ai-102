@@ -3,8 +3,8 @@ from azure.core.credentials import AzureKeyCredential
 import os
 
 # Azure credentials
-AZURE_FORM_RECOGNIZER_ENDPOINT = "https://your-resource-name.cognitiveservices.azure.com/"
-AZURE_FORM_RECOGNIZER_KEY = "your-api-key"
+AZURE_FORM_RECOGNIZER_ENDPOINT = os.getenv("AZURE_FORM_RECOGNIZER_ENDPOINT") # "https://your-resource-name.cognitiveservices.azure.com/"
+AZURE_FORM_RECOGNIZER_KEY = os.getenv("AZURE_FORM_RECOGNIZER_KEY") # "your-api-key"
 
 document_analysis_client = DocumentAnalysisClient(
     endpoint=AZURE_FORM_RECOGNIZER_ENDPOINT,
