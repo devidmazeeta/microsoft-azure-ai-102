@@ -14,6 +14,39 @@
 
 ---
 
+Azure AI Document Intelligence offers several **prebuilt models** designed to extract structured data from specific types of documents. Each model is identified by a unique `model_id` and is tailored to process particular document formats.
+
+## **Available Prebuilt Models and Their `model_id`'s**
+
+List of the prebuilt models along with their corresponding `model_id`s and the types of documents they support:
+
+| **Model**                 | **`model_id`**         | **Supported Document Types**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+|---------------------------|------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Invoice Model**         | `prebuilt-invoice`     | Extracts key information from invoices, such as vendor details, invoice numbers, dates, and amounts.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| **Receipt Model**         | `prebuilt-receipt`     | Processes sales receipts to extract merchant names, transaction dates, totals, and itemized details.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| **ID Document Model**     | `prebuilt-idDocument`  | Analyzes government-issued identification documents, including:<br>- **Worldwide**: Passport Book, Passport Card<br>- **United States**: Driver License, Identification Card, Residency Permit (Green Card), Social Security Card, Military ID<br>- **Europe**: Driver License, Identification Card, Residency Permit<br>- **India**: Driver License, PAN Card, Aadhaar Card<br>- **Canada**: Driver License, Identification Card, Residency Permit (Maple Card)<br>- **Australia**: Driver License, Photo Card, Key-pass ID (including digital versions) |
+| **Business Card Model**   | `prebuilt-businessCard`| Extracts contact information from business cards, such as names, job titles, company names, phone numbers, and email addresses.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| **W-2 Tax Form Model**    | `prebuilt-tax.us.w2`   | Extracts data from U.S. W-2 tax forms, including employee information, wages, and tax details.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| **General Document Model**| `prebuilt-document`    | Extracts text, tables, key-value pairs, and structure from a variety of document types. *Note: As of version 4.0, the `prebuilt-document` model is deprecated. Users are encouraged to use the `prebuilt-layout` model with the optional query string parameter `features=keyValuePairs` enabled.*                                                                                                                                                                                                                                                                                                                                                           |
+| **Layout Model**          | `prebuilt-layout`      | Extracts text, tables, selection marks, and structural elements from documents. Supports various file formats, including PDFs, images (JPEG, PNG, BMP, TIFF, HEIF), and Microsoft Office documents (Word, Excel, PowerPoint, HTML).                                                                                                                                                                                                                                                                                                                                                                                  |
+| **Read Model**            | `prebuilt-read`        | Performs Optical Character Recognition (OCR) to extract printed and handwritten text from documents. Supports multiple languages and file formats, including PDFs, images, and Microsoft Office documents.                                                                                                                                                                                                                                                                                                                                                                   |
+
+## **Selecting the Appropriate Model**
+
+When choosing a prebuilt model, consider the specific type of document you need to process:
+
+- **Invoices**: Use the `prebuilt-invoice` model.
+- **Receipts**: Use the `prebuilt-receipt` model.
+- **Identity Documents**: Use the `prebuilt-idDocument` model.
+- **Business Cards**: Use the `prebuilt-businessCard` model.
+- **U.S. W-2 Tax Forms**: Use the `prebuilt-tax.us.w2` model.
+- **General Documents**: Use the `prebuilt-layout` model with `features=keyValuePairs` for extracting key-value pairs and other structural elements.
+- **OCR Tasks**: Use the `prebuilt-read` model for text extraction.
+
+Each model is optimized for its respective document type, ensuring accurate and efficient data extraction.
+
+---
+
 ## **Use Cases**
 - **Invoice Processing**: Extract invoice numbers, amounts, and vendor details.
 - **Receipt Processing**: Capture purchase details from receipts automatically.
@@ -210,6 +243,16 @@ for receipt in result.documents:
 # **Step 7: Train a Custom Model (Optional)**
 If your documents have a unique format, you can **train a custom model**.
 
+1. Go to **Custom models** in your Azure AI Document Intelligence resource.
+2. Click **"Train a Model"**.
+3. Provide a **Blob Storage URL** where your labeled documents are stored.
+4. Select the **Build mode**:
+   - **Template**: Best for structured forms.
+   - **Composed**: Combine multiple models.
+   - **Neural**: Best for complex or handwritten documents.
+5. Click **"Train"** and wait for training to complete.
+6. Once trained, the model will have a unique **Model ID**, which you can use in API calls.
+
 ### **7.1 Upload Labeled Data**
 1. Upload labeled documents to **Azure Blob Storage**.
 2. Get the **Storage Container URL**.
@@ -260,3 +303,8 @@ for field_name, field_value in result.documents[0].fields.items():
 # **Conclusion**
 Azure AI Document Intelligence is a powerful tool for **automated document processing**. It extracts **structured data** from invoices, receipts, and custom forms, reducing **manual effort**. 
 
+---
+
+For more detailed information, refer to the [Azure AI Document Intelligence documentation](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/).
+
+---

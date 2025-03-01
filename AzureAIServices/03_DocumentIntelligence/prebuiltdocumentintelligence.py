@@ -3,8 +3,8 @@ from azure.core.credentials import AzureKeyCredential
 import os
 
 # Azure credentials
-AZURE_FORM_RECOGNIZER_ENDPOINT = os.getenv("AZURE_FORM_RECOGNIZER_ENDPOINT") # "https://your-resource-name.cognitiveservices.azure.com/"
-AZURE_FORM_RECOGNIZER_KEY = os.getenv("AZURE_FORM_RECOGNIZER_KEY") # "your-api-key"
+AZURE_FORM_RECOGNIZER_ENDPOINT = os.getenv("AZURE_FORM_RECOGNIZER_ENDPOINT") # https://your-resource-name.cognitiveservices.azure.com/
+AZURE_FORM_RECOGNIZER_KEY = os.getenv("AZURE_FORM_RECOGNIZER_KEY") # your-api-key
 
 document_analysis_client = DocumentAnalysisClient(
     endpoint=AZURE_FORM_RECOGNIZER_ENDPOINT,
@@ -12,7 +12,7 @@ document_analysis_client = DocumentAnalysisClient(
 )
 
 # Extract Text from a Document
-document_path = "invoice.pdf"  # Path to your document
+document_path = "./Input/invoice.pdf"  # Path to your document
 
 with open(document_path, "rb") as document_file:
     poller = document_analysis_client.begin_analyze_document(
@@ -28,7 +28,7 @@ for idx, field in enumerate(result.documents):
         print(f"{name}: {value.value} (Confidence: {value.confidence})")
 
 # Extract Data from a Receipt
-with open("receipt.jpg", "rb") as document_file:
+with open("./Input/receipt.jpg", "rb") as document_file:
     poller = document_analysis_client.begin_analyze_document(
         model_id="prebuilt-receipt",
         document=document_file

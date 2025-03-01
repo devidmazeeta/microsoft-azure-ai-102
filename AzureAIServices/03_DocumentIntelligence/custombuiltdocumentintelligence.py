@@ -4,8 +4,8 @@ from AzureAIServices.DocumentIntelligence.prebuiltdocumentintelligence import do
 import os
 
 # Azure credentials
-AZURE_FORM_RECOGNIZER_ENDPOINT = os.getenv("AZURE_FORM_RECOGNIZER_ENDPOINT") # "https://your-resource-name.cognitiveservices.azure.com/"
-AZURE_FORM_RECOGNIZER_KEY = os.getenv("AZURE_FORM_RECOGNIZER_KEY") # "your-api-key"
+AZURE_FORM_RECOGNIZER_ENDPOINT = os.getenv("AZURE_FORM_RECOGNIZER_ENDPOINT") # https://your-resource-name.cognitiveservices.azure.com/
+AZURE_FORM_RECOGNIZER_KEY = os.getenv("AZURE_FORM_RECOGNIZER_KEY") # your-api-key
 
 admin_client = DocumentModelAdministrationClient(
     endpoint=AZURE_FORM_RECOGNIZER_ENDPOINT,
@@ -14,14 +14,14 @@ admin_client = DocumentModelAdministrationClient(
 
 # Azure blob storage
 poller = admin_client.begin_build_model(
-    source="https://your-storage-account.blob.core.windows.net/container-name",
+    source="https://your-storage-account.blob.core.windows.net/container-name", # Replace url
     build_mode="template"
 )
 
 custom_model = poller.result()
 print(f"Custom Model ID: {custom_model.model_id}")
 
-with open("custom-document.jpg", "rb") as document_file:
+with open("./Input/custom-document.jpg", "rb") as document_file:
     poller = document_analysis_client.begin_analyze_document(
         model_id="your-custom-model-id",
         document=document_file
