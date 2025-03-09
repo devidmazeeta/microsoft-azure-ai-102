@@ -93,20 +93,51 @@ print("Bot's Response:", answer)
 ---
 
 ## **Use Cases**
-### **1. Chatbots for Customer Support**
-Companies use QnA Maker to automate customer support by answering frequently asked questions (FAQs). Integration with Microsoft Bot Framework allows seamless chatbot deployment.
+### 1️⃣ **Chatbots for Customer Support**
+- Automate responses to frequently asked questions.
+- Reduce customer service costs.
+- Provide instant answers to users.
 
-### **2. Virtual Assistants**
-QnA Maker can power AI-driven assistants that help users with documentation, troubleshooting, and service-related queries.
+**Example**: A company can integrate Azure QnA into a chatbot to help customers find product details.
 
-### **3. HR & Internal Knowledge Base**
-Organizations use QnA Maker to provide employees with answers to common HR-related questions like leave policies, benefits, and training schedules.
+---
 
-### **4. E-commerce Product FAQs**
-Online retailers integrate QnA Maker to respond to customer inquiries about product specifications, return policies, and shipping details.
+### 2️⃣ **Enterprise Knowledge Base**
+- Employees can quickly search for company policies, HR guidelines, and IT troubleshooting steps.
+- Saves time by automating internal documentation queries.
 
-### **5. Healthcare Support**
-Hospitals and clinics use QnA Maker to provide automated responses for patient queries about symptoms, appointment scheduling, and medical procedures.
+**Example**: HR chatbot that answers employees' payroll, leave, and benefits queries.
+
+---
+
+### 3️⃣ **E-learning and Educational Platforms**
+- Students can ask questions related to course material.
+- Supports interactive learning by retrieving answers from textbooks and PDFs.
+
+**Example**: An online coding school integrates QnA with course content, allowing students to ask "How does a for-loop work in Python?" and get instant answers.
+
+---
+
+### 4️⃣ **Healthcare and Medical Support**
+- Helps patients find symptoms, treatments, or appointment details.
+- Reduces the workload on human medical representatives.
+
+**Example**: A hospital integrates QnA for patients to ask about symptoms before scheduling an appointment.
+
+---
+
+### 5️⃣ **E-commerce Product Assistance**
+- Provides instant product recommendations and troubleshooting help.
+- Reduces support tickets by answering common questions.
+
+**Example**: An online shopping assistant that answers "How do I return a product?" or "Does this phone support 5G?".
+
+---
+
+## **Advanced Features**
+- **Multi-Turn Conversations**: Keeps track of previous interactions for a more natural conversation flow.
+- **Active Learning**: Improves the model by suggesting new question-answer pairs based on user input.
+- **Integration with Power Automate**: Automate workflows by connecting the QnA service to other Microsoft tools.
 
 ---
 
