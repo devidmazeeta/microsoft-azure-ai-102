@@ -133,6 +133,36 @@ print("Bot's Response:", answer)
 **Example**: An online shopping assistant that answers "How do I return a product?" or "Does this phone support 5G?".
 
 ---
+## **Sample Knowledge Base (KB)**
+
+1. **EdTech Support Bot** – for answering student and faculty queries  
+2. **Retail Product Assistant** – for answering questions related to products in an e-commerce platform
+
+---
+
+### 📘 **Knowledge Base 1: EdTech Support Bot**
+
+| **Question** | **Answer** | **Metadata** |
+|--------------|------------|--------------|
+| How do I reset my Ednue student password? | To reset your password, go to the login page and click "Forgot Password". Follow the instructions sent to your registered email. | category=account |
+| Can I reschedule my exam? | Yes, you can request a reschedule through the student portal under "Exam > Reschedule". Approval is based on your academic guidelines. | category=exam |
+| What is the passing criteria for Python certification? | You need to score a minimum of 60% in both the MCQ and coding test sections. | category=certification |
+| How do I contact my mentor? | You can message your mentor through the Ednue dashboard or email them directly from the "Mentor" tab. | category=support |
+| Are classes recorded? | Yes, all classes are recorded and uploaded within 24 hours. Access them under "My Courses > Recordings". | category=course |
+
+---
+
+### 📘 **Knowledge Base 2: Retail Product Assistant**
+
+| **Question** | **Answer** | **Metadata** |
+|--------------|------------|--------------|
+| What is the return policy? | You can return products within 7 days of delivery. Ensure the product is unused and in original packaging. | category=policy |
+| Is this shirt available in size L? | Please select the size from the product page. If it is not selectable, it's currently out of stock. | category=product_availability |
+| How long does delivery take? | Standard delivery takes 3–5 business days depending on your location. | category=shipping |
+| Do you offer cash on delivery? | Yes, cash on delivery is available for orders under ₹5000. | category=payment |
+| How do I track my order? | Go to "My Orders" and click "Track Order" next to your item. You'll see real-time updates. | category=order_tracking |
+
+---
 
 ## **Advanced Features**
 - **Multi-Turn Conversations**: Keeps track of previous interactions for a more natural conversation flow.
@@ -165,4 +195,3 @@ qna_maker = QnAMaker(
 
 ## **Conclusion**
 Azure QnA Maker is a powerful tool for building intelligent Q&A systems. With its NLP capabilities and easy integration options, it simplifies the creation of AI-driven conversational agents. Whether for customer support, HR, or healthcare, QnA Maker enhances user engagement and automates responses efficiently.
-
